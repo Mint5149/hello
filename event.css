@@ -1,0 +1,124 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+}
+
+.event-carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.event-title {
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.event-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.event-prev-button, .event-next-button {
+    background-color: #fff;
+    border: 1px solid #d2d2d7;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6e6e73;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.event-prev-button:hover, .event-next-button:hover {
+    background-color: #f0f0f0;
+    border-color: #b0b0b5;
+}
+
+.event-track {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 0 20px 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.event-track::-webkit-scrollbar {
+    display: none;
+}
+
+.event-card {
+    /* คำนวณความกว้างของการ์ดเพื่อให้มี 4 ช่องในบรรทัดเดียวกัน */
+    /* (100% - (3 * 20px gap)) / 4 = 285px */
+    flex: 0 0 285px; 
+    scroll-snap-align: start;
+    text-decoration: none;
+    color: inherit;
+    background-color: #fff;
+    border-radius: 18px; 
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-image-container {
+    overflow: hidden;
+    height: 180px; /* ลดความสูงของรูปภาพให้พอดี */
+}
+
+.event-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.event-card:hover img {
+    transform: scale(1.05);
+}
+
+.event-content {
+    padding: 24px;
+}
+
+.event-content h3 {
+    margin: 0 0 8px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.event-content p {
+    margin: 0;
+    color: #86868b;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e3e3e3;
+    margin: 40px 0;
+}
